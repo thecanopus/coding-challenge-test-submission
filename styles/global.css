@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+  font-family: var(--font-primary), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,7 +12,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* TODO: Add the 'Roboto' font from Google fonts and add it as a global CSS var called `--font-primary` */
+/* TODO: **DONE. Somehow the Next google font optimisation wasn't working** Add the 'Roboto' font from Google fonts and add it as a global CSS var called `--font-primary` */
 /* TODO: Make application responsive. It is already for the most part, but it is not optimal for smaller screens.
 * - Making the application responsive using the Mobile First principle.
 */
@@ -26,6 +28,7 @@ code {
   --color-text-light: #72787d;
   --width-input: 20rem;
   --width-content: 30rem;
+  --font-primary: 'Roboto';
 }
 
 * {
