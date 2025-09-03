@@ -20,8 +20,9 @@
   transform: scale(0.95);
 }
 
-/** TODO: Create separate styles for .primary and .secondary variants of this button:
+/** TODO: **DONE** Create separate styles for .primary and .secondary variants of this button:
 * - Must use the CSS variables declared in App.css
+**NOTE: App.css doesn't have these variables. globals does.**
 */
 
 .primary {
