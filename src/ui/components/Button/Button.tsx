@@ -21,7 +21,7 @@ const Button: FunctionComponent<ButtonProps> = ({
 }) => {
   return (
     <button
-      // TODO: Add conditional classNames
+      // TODO: **DONE** Add conditional classNames
       // - **DONE** Must have a condition to set the '.primary' className
       // - **DONE** Must have a condition to set the '.secondary' className
       // - **DONE** Display loading spinner per demo video. NOTE: add data-testid="loading-spinner" for spinner element (used for grading)
