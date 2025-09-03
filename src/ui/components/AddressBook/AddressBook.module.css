@@ -6,12 +6,13 @@
 
 .remove {
   --color-brand: var(--color-accent);
-  margin-left: auto;
 }
 
 .item {
-  align-items: center;
+  align-items: start;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
 }
 
@@ -21,4 +22,11 @@
 
 .item h3 {
   margin: 0 0 0.5em;
+}
+
+@media only screen and (min-width: 600px) {
+  .item {
+    flex-direction: row;
+    align-items: center;
+  }
 }
