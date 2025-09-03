@@ -13,6 +13,7 @@ import styles from "./App.module.css";
 import { Address as AddressType } from "./types";
 import ErrorMessage from "@/components/ErrorMessage/ErrorMessage";
 import transformAddress from "./core/models/address";
+import Form from "@/components/Form/Form";
 
 function App() {
   /**
@@ -114,6 +115,61 @@ function App() {
     addAddress({ ...foundAddress, firstName: formFields.firstName, lastName: formFields.lastName });
   };
 
+  
+  /** 
+   * Form builders
+  */
+  const findAddressForm = {
+    loading: isLoading,
+    label: "🏠 Find an address",
+    formEntries: [
+      {
+        name: 'postCode',
+        placeholder: 'Post Code',
+        extraProps: {
+          onChange: onChange,
+          value: formFields.postCode
+        }
+      },
+      {
+        name: 'houseNumber',
+        placeholder: 'House Number',
+        extraProps: {
+          onChange: onChange,
+          value: formFields.houseNumber
+        }
+      },
+    ],
+    submitText:"Find",
+    onFormSubmit: handleAddressSubmit
+  }
+
+  
+  const addAddressForm = {
+    loading: isLoading,
+    label: "✏️ Add personal info to address",
+    formEntries: [
+      {
+        name: 'firstName',
+        placeholder: 'First name',
+        extraProps: {
+          onChange: onChange,
+          value: formFields.firstName
+        }
+      },
+      {
+        name: 'lastName',
+        placeholder: 'Last name',
+        extraProps: {
+          onChange: onChange,
+          value: formFields.lastName
+        }
+      },
+    ],
+    submitText:"Add to addressbook",
+    onFormSubmit: handlePersonSubmit
+  }
+
   return (
     <main>
       <Section>
@@ -124,29 +180,8 @@ function App() {
             Enter an address by postcode add personal info and done! 👏
           </small>
         </h1>
-        {/* TODO: Create generic <Form /> component to display form rows, legend and a submit button  */}
-        <form onSubmit={handleAddressSubmit}>
-          <fieldset>
-            <legend>🏠 Find an address</legend>
-            <div className={styles.formRow}>
-              <InputText
-                name="postCode"
-                onChange={onChange}
-                placeholder="Post Code"
-                value={formFields.postCode}
-              />
-            </div>
-            <div className={styles.formRow}>
-              <InputText
-                name="houseNumber"
-                onChange={onChange}
-                value={formFields.houseNumber}
-                placeholder="House number"
-              />
-            </div>
-            <Button type="submit" loading={isLoading}>Find</Button>
-          </fieldset>
-        </form>
+        {/* TODO: **DONE** Create generic <Form /> component to display form rows, legend and a submit button  */}
+        <Form {...findAddressForm} />
         {addresses.length > 0 &&
           addresses.map((address) => {
             return (
@@ -160,30 +195,9 @@ function App() {
               </Radio>
             );
           })}
-        {/* TODO: Create generic <Form /> component to display form rows, legend and a submit button  */}
+        {/* TODO: **DONE** Create generic <Form /> component to display form rows, legend and a submit button  */}
         {formFields.selectedAddress && (
-          <form onSubmit={handlePersonSubmit}>
-            <fieldset>
-              <legend>✏️ Add personal info to address</legend>
-              <div className={styles.formRow}>
-                <InputText
-                  name="firstName"
-                  placeholder="First name"
-                  onChange={onChange}
-                  value={formFields.firstName}
-                />
-              </div>
-              <div className={styles.formRow}>
-                <InputText
-                  name="lastName"
-                  placeholder="Last name"
-                  onChange={onChange}
-                  value={formFields.lastName}
-                />
-              </div>
-              <Button type="submit">Add to addressbook</Button>
-            </fieldset>
-          </form>
+          <Form {...addAddressForm} />
         )}
 
         {/* TODO: **DONE** Create an <ErrorMessage /> component for displaying an error message */}

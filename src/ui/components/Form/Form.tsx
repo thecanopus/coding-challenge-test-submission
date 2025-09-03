@@ -1,22 +1,26 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ChangeEvent } from 'react';
 
 import Button from '../Button/Button';
 import InputText from '../InputText/InputText';
 import $ from './Form.module.css';
 
+type ExtraFormEntryProps = {
+  value: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}
 interface FormEntry {
   name: string;
   placeholder: string;
-  // TODO: Defined a suitable type for extra props
+  // TODO: **DONE** Defined a suitable type for extra props
   // This type should cover all different of attribute types
-  extraProps: any;
+  extraProps: ExtraFormEntryProps;
 }
 
 interface FormProps {
   label: string;
   loading: boolean;
   formEntries: FormEntry[];
-  onFormSubmit: () => void;
+  onFormSubmit: (e: React.ChangeEvent<HTMLFormElement>) => (Promise<void> | void);
   submitText: string;
 }
 
