@@ -1,3 +1,5 @@
+Note: Submission was delayed due to email exposure settings.
+
 # React Dev Test Assignment ⚛️
 
 https://drive.google.com/file/d/1qwPJQL04jhTgPuf3hfyUPfqZK2F6T604/view?usp=sharing
