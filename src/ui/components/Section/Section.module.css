@@ -3,9 +3,9 @@
   border-radius: var(--border-radius-xl);
   box-shadow: 0 15px 15px rgba(0, 0, 0, 0.15);
   color: var(--color-text);
-  margin: 3rem auto;
+  margin: 0.5rem auto 1rem auto;
   max-width: var(--width-content);
-  padding: 2rem 3rem;
+  padding: 2rem 2rem;
   width: 100%;
 }
 
@@ -13,4 +13,11 @@
   --color-background: #141925;
   --color-text: #fff;
   --color-text-light: #878b9a;
+}
+
+@media only screen and (min-width: 600px) {
+  .section {
+    margin: 3rem auto;
+    padding: 2rem 3rem;
+  }
 }

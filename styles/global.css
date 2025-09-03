@@ -43,7 +43,7 @@ body {
 }
 
 main {
-  padding: 2rem;
+  padding: 0.5rem;
 }
 
 small {
@@ -64,4 +64,10 @@ fieldset {
 
 legend {
   color: var(--color-text-light);
+}
+
+@media only screen and (min-width: 600px) {
+  main {
+    padding: 2rem;
+  }
 }
