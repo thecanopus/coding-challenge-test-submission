@@ -144,7 +144,7 @@ function App() {
                 placeholder="House number"
               />
             </div>
-            <Button type="submit">Find</Button>
+            <Button type="submit" loading={isLoading}>Find</Button>
           </fieldset>
         </form>
         {addresses.length > 0 &&

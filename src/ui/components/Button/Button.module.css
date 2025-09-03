@@ -10,6 +10,9 @@
   margin: 0.5em 0;
   transition: transform 0.1s ease;
   width: 100%;
+  display: flex;
+  column-gap: 4px;
+  justify-content: center;
 }
 
 .button:hover {

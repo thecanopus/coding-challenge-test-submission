@@ -2,6 +2,7 @@ import { ButtonType, ButtonVariant } from "@/types";
 import React, { FunctionComponent } from "react";
 
 import $ from "./Button.module.css";
+import Spinner from "@/components/Spinner/Spinner";
 
 interface ButtonProps {
   onClick?: () => void;
@@ -23,7 +24,7 @@ const Button: FunctionComponent<ButtonProps> = ({
       // TODO: Add conditional classNames
       // - **DONE** Must have a condition to set the '.primary' className
       // - **DONE** Must have a condition to set the '.secondary' className
-      // - Display loading spinner per demo video. NOTE: add data-testid="loading-spinner" for spinner element (used for grading)
+      // - **DONE** Display loading spinner per demo video. NOTE: add data-testid="loading-spinner" for spinner element (used for grading)
       className={
         [
           $.button,
@@ -36,6 +37,7 @@ const Button: FunctionComponent<ButtonProps> = ({
       type={type}
       onClick={onClick}
     >
+      { loading ? <Spinner /> : '' }
       {children}
     </button>
   );
